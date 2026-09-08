@@ -58,6 +58,15 @@ header{position:sticky;top:0;z-index:40;background:var(--paper);
   border:1px solid transparent;border-radius:var(--r);color:var(--ink-2)}
 .iconbtn:hover{background:var(--paper-2);color:var(--ink)}
 .iconbtn svg{width:19px;height:19px}
+#theme svg:last-child{display:none}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme=light]) #theme svg:first-child{display:none}
+  :root:not([data-theme=light]) #theme svg:last-child{display:block}
+}
+:root[data-theme=dark] #theme svg:first-child{display:none}
+:root[data-theme=dark] #theme svg:last-child{display:block}
+:root[data-theme=light] #theme svg:first-child{display:block}
+:root[data-theme=light] #theme svg:last-child{display:none}
 #menu{display:none}
 .progress{position:absolute;left:0;bottom:-1px;height:2px;
   background:var(--accent);width:0;transition:width .12s linear}
